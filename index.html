@@ -15,7 +15,7 @@
   <script src="https://use.fontawesome.com/61e146bea4.js"></script>
 </head>  
 <body>
-<div class="container-fluid sticky-top px-4 py-2 backtop">
+<div class="container-fluid sticky-top px-4 py-2">
 
 <!-- NAVBAR -->
   <nav class="navbar rounded-5">
@@ -36,12 +36,12 @@
   <a class="nav-link px-3 py-1 rounded-4 shadow-sm" href="about.html" id="UI" data-animation-role="header-element">About</a>
   </span>
 
-  <form class="d-flex d-none d-lg-flex rounded-5 shadow-sm bg-light input-group w-25 mx-3 mb-0" role="search" action="store.html"  method="GET">
+  <form class="d-flex d-none d-md-flex d-lg-flex rounded-5 shadow-sm bg-light input-group w-25 mx-3 mb-0" role="search" action="store.html"  method="GET">
     <input class="form-control text-truncate rounded-5" type="search" name="search" style="border: none;" placeholder="What are you looking for?" aria-label="Search" required>
     <button class="btn" type="submit" name="done"><i class="fa fa-search"></i></button>
   </form>
 
-  <span class="nav-item d-lg-none d-flex mx-2" style="margin-left: 30px;">            
+  <span class="nav-item d-lg-none d-md-none d-flex mx-2" style="margin-left: 30px;">            
   <button type="button" class="btn openbtn fs-5"  id="ring" onclick="openNav()"><i class="fa fa-search"></i></button>
   </span>
 
@@ -55,9 +55,9 @@
   </span>
  
   <!--DROPDOWN SEARCHBAR  -->
-<div id="myNav" class="overlay shadow-sm rounded-5 d-lg-none d-flex">
-<form class="input-group border" role="search" action="store.html" method="GET">
-<input class="form-control rounded-5" type="search" name="search" autocomplete="on" placeholder="What are you looking for?" aria-label="Search" required>
+<div id="myNav" class="overlay w-100 d-lg-none d-md-none d-flex border-2">
+<form class="input-group shadow-sm rounded-5 border-0 m-2" role="search" action="store.html" method="GET" style="background: var(--secondary-color);">
+<input class="form-control rounded-5 border-0" type="search" name="search" autocomplete="on" placeholder="What are you looking for?" aria-label="Search" required>
 <button class="btn" type="submit" name="done"><i class="fa fa-search" style="color:  var(--primary-color);"></i></button>
 </form>
 </div>
@@ -66,39 +66,17 @@
 </nav>
 <!-- NAVBAR -->
 
-<style>
-  /* SEARCHBAR DROPDOWN */
-  .overlay.open{
-height: 80%;
-}
-.overlay{
-  background-color:  var(--secondary-color);
-  height: 0%;
-width: 100%;
-/* position:absolute;
-left: 0;
-right: 0;
-top: 70; */
-transition: 0.5s;
-overflow: hidden;
-}                      
-/* SEARCHBAR DROPDOWN */
-
-</style>
 
 <!-- SIDEBAR -->
 <div id="mySidebar" class="sidebar d-lg-none">
-<h1 class="title">Yaga Kits</h1>
-<a href="index.html">Home</a>
-<a href="store.html">Shop</a>
-<a href="about.html">About</a>
-<a id="content_name" onclick="darkmode()"><i class="fa fa-moon fs-2"></i> Theme</a>
+  <h1 class="title">Yaga Kits</h1>
+  <a href="index.html" id="UD">Home</a>
+  <a href="store.html" id="UD">Shop</a>
+  <a href="about.html" id="UD">About</a>
+  <a id="content_name" onclick="darkmode()"><i class="fa fa-moon fs-2"></i> Theme</a>
 </div>
-
 <!-- SIDEBAR -->
 </div>
-
-
 
 <!-- CONTENT -->
 
@@ -110,7 +88,7 @@ overflow: hidden;
   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
   <div class="carousel-inner">
-  <div class="carousel-item active d-flex align-items-center" style="height: 70vh; width:100%; background-image:Url('images/r30tiehk.png');background-repeat: no-repeat;background-position: center;background-size:cover;">
+  <div class="carousel-item active d-flex align-items-center px-lg-5 px-md-5" style="height: 70vh; width:100%; background-image:Url('images/product_img/r30tiehk.png');background-repeat: no-repeat;background-position: center;background-size:cover;">
   <div class="gx-md-100 d-flex bg-waning text-light align-items-start justify-content-center mx-5 px-lg-5" style="flex-direction: column;">
   <h6>Welcome to Yaga Kits</h6>
   <h1>Get up to 30% Off</h1>
@@ -120,10 +98,10 @@ overflow: hidden;
   </div>
 
   <!--  -->
-  <div class="carousel-item" style="height: 70vh; width:100%; background-image:Url('images/lj8vowim.png');background-repeat: no-repeat; background-position: center;background-size:cover;">
+  <div class="carousel-item" style="height: 70vh; width:100%; background-image:Url('images/background/lj8vowim.png');background-repeat: no-repeat; background-position: center;background-size:cover;">
   </div>
   <!--  -->
-  <div class="carousel-item" style="height: 70vh; width:100%; background-image:Url('images/kwwfwa1h.png');background-repeat: no-repeat;background-position: center;background-size:cover;">
+  <div class="carousel-item" style="height: 70vh; width:100%; background-image:Url('images/background/kwwfwa1h.png');background-repeat: no-repeat;background-position: center;background-size:cover;">
   </div>
 
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -146,19 +124,12 @@ overflow: hidden;
   <div class="container-fluid pb-5">
   <div class="container">
   <div class="row"> 
-  <?php
-  $result =mysqli_query($con,"SELECT * FROM `products` order by RAND() limit 20");
-  while($row = mysqli_fetch_array($result)){
-  $good = $row['disc_price'];
-  $price = $row['product_price'];
-  $bad = $row['product_price'] - $row['disc_price'];
-
-  ?>
-
+  
+    <!-- PRO -->
   <div class="col-md-3 col-sm-6 my-3">
   <div class="card rounded-0" id="come">
   <div class="imgBx" id=">">
-  <img src="images/wp8725827.webp" alt="image">
+  <img src="images/product_img/56io4a3e.png" alt="image">
   
   <div id="cart_count" class="position-absolute translate-middle badge py-2" style="right:-30px; top:25px; background: rgb(251, 253, 253);border:solid 1px #fec267; color:#fec267; border-radius:2px 2px 2px 2px; font-size:12px;">5% Off</div>
   
@@ -188,17 +159,122 @@ overflow: hidden;
   </div>
   </div>
   </div>
- 
+ <!-- PRO -->
+    <!-- PRO -->
+  <div class="col-md-3 col-sm-6 my-3">
+  <div class="card rounded-0" id="come">
+  <div class="imgBx" id=">">
+  <img src="images/product_img/528fmugr.png" alt="image">
+  
+  <div id="cart_count" class="position-absolute translate-middle badge py-2" style="right:-30px; top:25px; background: rgb(251, 253, 253);border:solid 1px #fec267; color:#fec267; border-radius:2px 2px 2px 2px; font-size:12px;">5% Off</div>
+  
+  <ul class="action">
+  <a href="action.php?p=<?php echo $row['p_id'] ?>" class="text-decoration-none text-dark"><li><i class="fa fa-heart"></i><span class="voo">Add to wishlist</span></li></a>
+  <a href="action.php?add=<?php echo $row['p_id'] ?>" class="text-decoration-none text-dark"><li><i class="fa fa-shopping-cart"></i><span class="voo">Add to cart</span></li></a>
+  <a href="details.php?p=<?php echo $row['p_id'] ?>" class="text-decoration-none text-dark"><li><i class="fa fa-eye"></i><span class="voo">View details</span></li></a>
+  </ul>
+  </div>
+  <div class="content">
+  <div class="productName" id="ring">
+  <h6 class="text-dark" style="display: -webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:1; overflow:hidden; height:25px;">Boots</h6>
+  </div>
+  <div class="price_rating">
+  
+  <h3>&#8358; 2700</h3>
+  <h6 class="text-secondary"><s>&#8358;3000</s></h6>
+  
+  <div class="rating">
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star text-secondary" aria-hidden="true"></i>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+ <!-- PRO -->
+    <!-- PRO -->
+  <div class="col-md-3 col-sm-6 my-3">
+  <div class="card rounded-0" id="come">
+  <div class="imgBx" id=">">
+  <img src="images/product_img/8gis7886.png" alt="image">
+  
+  <div id="cart_count" class="position-absolute translate-middle badge py-2" style="right:-30px; top:25px; background: rgb(251, 253, 253);border:solid 1px #fec267; color:#fec267; border-radius:2px 2px 2px 2px; font-size:12px;">5% Off</div>
+  
+  <ul class="action">
+  <a href="action.php?p=<?php echo $row['p_id'] ?>" class="text-decoration-none text-dark"><li><i class="fa fa-heart"></i><span class="voo">Add to wishlist</span></li></a>
+  <a href="action.php?add=<?php echo $row['p_id'] ?>" class="text-decoration-none text-dark"><li><i class="fa fa-shopping-cart"></i><span class="voo">Add to cart</span></li></a>
+  <a href="details.php?p=<?php echo $row['p_id'] ?>" class="text-decoration-none text-dark"><li><i class="fa fa-eye"></i><span class="voo">View details</span></li></a>
+  </ul>
+  </div>
+  <div class="content">
+  <div class="productName" id="ring">
+  <h6 class="text-dark" style="display: -webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:1; overflow:hidden; height:25px;">Boots</h6>
+  </div>
+  <div class="price_rating">
+  
+  <h3>&#8358; 2700</h3>
+  <h6 class="text-secondary"><s>&#8358;3000</s></h6>
+  
+  <div class="rating">
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star text-secondary" aria-hidden="true"></i>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+ <!-- PRO -->
+    <!-- PRO -->
+  <div class="col-md-3 col-sm-6 my-3">
+  <div class="card rounded-0" id="come">
+  <div class="imgBx" id=">">
+  <img src="images/product_img/nl0yut8v.png" alt="image">
+  
+  <div id="cart_count" class="position-absolute translate-middle badge py-2" style="right:-30px; top:25px; background: rgb(251, 253, 253);border:solid 1px #fec267; color:#fec267; border-radius:2px 2px 2px 2px; font-size:12px;">5% Off</div>
+  
+  <ul class="action">
+  <a href="action.php?p=<?php echo $row['p_id'] ?>" class="text-decoration-none text-dark"><li><i class="fa fa-heart"></i><span class="voo">Add to wishlist</span></li></a>
+  <a href="action.php?add=<?php echo $row['p_id'] ?>" class="text-decoration-none text-dark"><li><i class="fa fa-shopping-cart"></i><span class="voo">Add to cart</span></li></a>
+  <a href="details.php?p=<?php echo $row['p_id'] ?>" class="text-decoration-none text-dark"><li><i class="fa fa-eye"></i><span class="voo">View details</span></li></a>
+  </ul>
+  </div>
+  <div class="content">
+  <div class="productName" id="ring">
+  <h6 class="text-dark" style="display: -webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:1; overflow:hidden; height:25px;">Boots</h6>
+  </div>
+  <div class="price_rating">
+  
+  <h3>&#8358; 2700</h3>
+  <h6 class="text-secondary"><s>&#8358;3000</s></h6>
+  
+  <div class="rating">
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star text-secondary" aria-hidden="true"></i>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+ <!-- PRO -->
+
   </div>
   </div>
   </div>
 <!-- PRODUCT -->
 
   <div class="container-fluid" style="display: flex; align-items:center; justify-content:center;">
-  <a class="my-5 text-decoration-none more rounded-5 px-3" id="ring"><b class="mx-2">Shop</b>for more</a>
+  <a href="store.html" class="my-5 text-decoration-none more rounded-5 px-3" id="ring"><b class="mx-2">Shop</b>for more <i class="fa fa-shopping-cart"></i></a>
   </div>
 <!-- COTENT -->
-
 
 <!-- FOOTER -->
 <div class="container-fluid text-light" style="background-color:#303032;">
