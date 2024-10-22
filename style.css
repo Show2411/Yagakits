@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Spray+Paint&family=Tilt+Prism&display=swap');
+
 *{  
 font-family: 'Montserrat', sans-serif;
 box-sizing: border-box; 
@@ -41,9 +43,9 @@ background-position: 100% 50%;
 background-position: 0% 50%;
 }
 }
+  
 
-
-.un, .duo, .tres, .quart, .cing, .six, .sept, .eight{
+.un, .duo, .tres, .quart, .cing, .six, .sept, .eight,.yaga,.title{
 color: #fec267;
   font-family: "Tilt Prism", sans-serif;
   font-optical-sizing: auto;
@@ -61,13 +63,13 @@ color: var(--secondary-color);
 color: var(--secondary-color);
 transition: .3s ease-in-out;
 }
-#UI:is(:link, :active, :visited).active{
+#UI:is(:link, :active, :visited).active, #UD:is(:link, :active, :visited).active{
 color:#fec267;
 border:solid 1px;
 padding-left: 8px;
 padding-right: 8px;
 }
-#UI:hover, .back-btn:hover, #contentname:hover{
+#UI:hover, .back-btn:hover, #contentname:hover, #content_name:hover{
 color:#fec267;
 }
 ::-webkit-scrollbar{
@@ -79,13 +81,14 @@ display: none;
 ::-webkit-scrollbar-thumb{
 display: none;
 }
-.navbar,.navbar1{
+.navbar{
 background: var(--primary-color);
 box-shadow: inset -5px -5px 5px transparent,
 inset 5px 5px 5px var(--color-one);
 transition: 0.5s;  
 }
 .navbar1{
+transition: 0.5s;
 height: 500px;
 }
 .navbar1.reduce{
@@ -93,7 +96,12 @@ height: 60px;
 }
 .navbar1 h1{
 font-size: 80px;
-}
+    font-family: "Rubik Spray Paint", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    transition: 0.5s;
+    color: #fff;
+  }
 .navbar1 h1.reduce{
 font-size: 25px;
 }
@@ -101,7 +109,8 @@ font-size: 25px;
 cursor: pointer;
 padding: 10px 17px;
 position: absolute;
-left: 10px; top: 9px;
+left: 20px;
+top: 15px;
 color: var(--secondary-color);
 background: var(--second-color);
 }
@@ -213,6 +222,20 @@ color: #f1f1f1;
 }
 
 /* SIDEBAR */
+
+  /* SEARCHBAR DROPDOWN */
+  #myNav{
+    transition: 0.5s;
+  }
+.overlay{
+  height: 0px;
+  transition: 0.5s;
+  overflow: hidden;
+}
+.overlay.open{
+height: 100%;
+}
+/* SEARCHBAR DROPDOWN */
 
 
 /* BODY */
@@ -386,12 +409,19 @@ transition: border .3s ease-in-out;
 color:#fec267;
 }
 .more{
-transition: transform 1s;
-font-size: 20px; 
-background: #fec267;
-}
-.more:hover{
-color: #fec267;
-background: none;
-border: solid 1.5px #fec267;
-} 
+    font-size: 20px; 
+    background: #fec267;
+    transition: 0.5s;
+  }
+  .more i{
+    display: none;
+    transition-delay: 1s;
+  }
+  .more:hover{
+  border: solid 1.5px #fec267;
+  background: none;
+  } 
+  .more:hover i{
+    display: inline;
+  }
+  
