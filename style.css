@@ -10,9 +10,9 @@ margin: 0;
 --primary-color: #fdfcfc;
 --secondary-color: #212121;
 --color-one: #c3c6c9;
---first-color: #CFD9E0;
+--first-color: #c8cdd1;
 --second-color: #d6d8d9;
---third-color: #d1d1d1;
+--third-color: #c3c1c1;
 
 }
 .dark-mode{
@@ -224,16 +224,16 @@ color: #f1f1f1;
 /* SIDEBAR */
 
   /* SEARCHBAR DROPDOWN */
-  #myNav{
-    transition: 0.5s;
-  }
+  
 .overlay{
   height: 0px;
-  transition: 0.5s;
   overflow: hidden;
 }
 .overlay.open{
 height: 100%;
+}
+.overlay form{
+  transition: 0.5s;
 }
 /* SEARCHBAR DROPDOWN */
 
@@ -280,11 +280,38 @@ transform-origin: right;
 .card:hover .imgBx img{
 transform: scale(1.5);
 }
-
+.card.wow{
+  height: 300px;
+ overflow: hidden;
+}
+.card.wow img{
+  width: 100%;
+   display: block;
+   height: 100%;
+   object-fit: cover;
+   transition: transform 0.5s;
+}
+.card.wow .card-body{
+width: 100%;
+background: linear-gradient(transparent, #1c1c1c);
+position: absolute; 
+left: 0; bottom: 0;
+overflow: hidden; 
+flex-direction: column;
+padding: 0 ;
+text-align: center;
+transition: height 0.5s;
+color: #fff;
+height: 0;
+}
+.card.wow:hover .card-body{
+  height: 100%;
+}
 .action{
 position: absolute;
 top: 10px;
 right: 10px;
+z-index: 1;
 }
 .action a li{
 position: relative;
@@ -300,18 +327,16 @@ cursor: pointer;
 transform: translateX(60px);
 transition: transform 0.5s;
 }
-.action a li:nth-child(2){
-transition-delay: 0.15s;
-}
-.action a li:nth-child(3){
-transition-delay: 0.3s;
-}
 .card:hover .action a li{
 transform: translateX(0px);
 }
 a li:hover{
 background: #fec267;
 color: white;
+}
+.action a li:nth-child(2){
+  background-color: red;
+  transition-delay: 0.3s;
 }
 .voo{
 position: absolute;
@@ -369,7 +394,57 @@ cursor: pointer;
 color: #ffd513;
 pointer-events: none;
 }
-
+.card.big{
+  min-width: 15%;
+  height: 70vh;
+  margin: 2px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:cover;
+  transition: 0.5s;
+  overflow: hidden;
+}
+.card.big div{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+}
+.card.big .paragraph{
+  background: #3333336f; 
+  transform: rotate(90deg); 
+   font-size: 80px;
+   border: solid #040404 2px;
+ }
+.card.big h1,.card.big h4{
+  transition: 0.5s;
+  display: none;
+ }
+ .card.big:hover div{
+  background:linear-gradient(to top, black,transparent, transparent) ;
+  align-items: start;
+  justify-content: end;
+  flex-direction: column;
+}
+.card.big:hover .paragraph{
+  font-size: 20px;
+  background: #fec267;
+  transform: rotate(0deg); 
+border: none;
+height: initial;   
+color: #040404;
+ }
+.card.big:hover{
+  min-width: 25%;
+}
+.card.big:hover h1{
+  display: -webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:1; overflow:hidden; height:px;
+  }
+.card.big:hover h4{
+  display: -webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:1; overflow:hidden; height:px;
+  }
+  
 /* BODY */
 
 
@@ -403,11 +478,49 @@ opacity: 0.7;
 .scrollTop.active:hover{
 opacity: 1;
 }
-a.social:hover{
-border:solid 1px;
-transition: border .3s ease-in-out;
-color:#fec267;
+.social-bar{
+  display: flex;
+  justify-content: space-evenly;
 }
+a.social{
+  height: px;
+  width: px;
+  transition: 0.5s;
+  color: #fff;
+  border: none;
+  text-align: center;
+  padding: 0%;
+  }
+a.social:hover{
+  width: max-content;
+  background: transparent;
+  border: solid 2px #fec267;
+  /* color:#fec267; */
+  padding-left: 2%;
+  padding-right: 2%;
+  display: flex;
+  align-items: center;
+}
+a.social:hover::after{
+  padding-inline-start: 3%;
+  color: #fff;
+  font-size:large;
+}
+a.social:first-child:hover::after{
+  content: "facebook";
+  }
+a.social:nth-child(2):hover::after{
+  content: "instagram";
+ }
+a.social:nth-child(3):hover::after{
+  content: "twitter";
+ }
+a.social:nth-child(4):hover::after{
+  content: "Whatsapp";
+ }
+a.social:nth-child(5):hover::after{
+  content: "mail";
+ }
 .more{
     font-size: 20px; 
     background: #fec267;
@@ -424,4 +537,33 @@ color:#fec267;
   .more:hover i{
     display: inline;
   }
-  
+  @media screen and (max-width:750px) {
+    .card.big{
+    min-width: 30%;
+    }
+    .card.big:hover{
+      min-width: 50%;
+    }    
+    }
+    @media screen and (max-width:500px) {
+      .card.big{
+      min-width: 40%;
+      }
+      .card.big:hover{
+        min-width: 75%;
+      }
+      }
+      @media screen and (max-width:400px) {
+        .card.big{
+        min-width: 45%;
+        }
+        .card.big:hover{
+          min-width: 100%;
+        }   
+        a.social{
+          height: 50px;
+          width: 80px;
+          }
+             
+        }
+                 
