@@ -55,11 +55,11 @@ const search = () =>{
   const searchbox = document.getElementById("search-item").value.toUpperCase();
   const storeitems = document.getElementById("product-list");
   const product = document.querySelectorAll(".product");
-  const pname = storeitems.getElementsByTagName("h6");
+  const pname = storeitems.getElementsByTagName("h5");
 
   
   for(var i=0; i < pname.length; i++){
-    let match = product[i].getElementsByTagName('h6')[0];
+    let match = product[i].getElementsByTagName('h5')[0];
 
     if(match){
       let textvalue = match.textContent || match.innerHTML
@@ -70,16 +70,51 @@ const search = () =>{
       }
     }
   }
+
+  const storeItems = document.getElementById("productlist");
+  const Pname = storeItems.getElementsByTagName("h5");
+
+  
+  for(var i=0; i < Pname.length; i++){
+    let match = product[i].getElementsByTagName('h5')[0];
+
+    if(match){
+      let textvalue = match.textContent || match.innerHTML
+      if(textvalue.toUpperCase().indexOf(searchbox) > -1){
+        product[i].style.display = "";
+      }else{
+        product[i].style.display = "none";
+      }
+    }
+  }
+
+//   const storeIt = document.getElementById("List");
+//   const Proname = document.getElementById("List").getElementsByTagName("h4");
+
+  
+//   for(var i=0; i < Proname.length; i++){
+//     let match = product[i].getElementsByTagName('h4')[0];
+
+//     if(match){
+//       let textvalue = match.textContent || match.innerHTML
+//       if(textvalue.toUpperCase().indexOf(searchbox) > -1){
+//         product[i].style.display = "";
+//       }else{
+//         product[i].style.display = "none";
+//       }
+//     }
+//   }
+// console.log(document.getElementById("List").getElementsByTagName("h4")[0]);
 }
 
 const searchitem = () =>{
   const search_box = document.getElementById("searchit").value.toUpperCase();
   const store_items = document.getElementById("product-list");
   const products = document.querySelectorAll(".product");
-  const p_name = store_items.getElementsByTagName("h6");
+  const p_name = store_items.getElementsByTagName("h5");
 
   for(var i=0; i < p_name.length; i++){
-    let matchs = products[i].getElementsByTagName('h6')[0];
+    let matchs = products[i].getElementsByTagName('h5')[0];
 
     if(matchs){
       let text_value = matchs.textContent || matchs.innerHTML
@@ -90,4 +125,21 @@ const searchitem = () =>{
       }
     }
   }
-}
+
+  const store_Items = document.getElementById("productlist");
+  const P_name = store_Items.getElementsByTagName("h5");
+
+  for(var i=0; i < P_name.length; i++){
+    let matchs = products[i].getElementsByTagName('h5')[0];
+
+    if(matchs){
+      let text_value = matchs.textContent || matchs.innerHTML
+      if(text_value.toUpperCase().indexOf(search_box) > -1){
+        products[i].style.display = "";
+      }else{
+        products[i].style.display = "none";
+      }
+    }
+  }
+
+  }
