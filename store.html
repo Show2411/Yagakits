@@ -36,9 +36,9 @@
           <a class="nav-link px-3 py-1 rounded-4 shadow-sm" href="about.html" id="UI" data-animation-role="header-element">About</a>
           </span>
         
-          <form class="d-flex d-none d-md-flex d-lg-flex rounded-5 shadow-sm bg-light input-group w-25 mx-3 mb-0" role="search" action="store.html"  method="GET">
-            <input class="form-control text-truncate rounded-5" type="search" name="search" style="border: none;" placeholder="What are you looking for?" aria-label="Search" required>
-            <button class="btn" type="submit" name="done"><i class="fa fa-search"></i></button>
+          <form class="d-flex d-none d-md-flex d-lg-flex rounded-5 shadow-sm bg-light input-group w-25 mx-3 mb-0" role="search">
+            <input class="form-control text-truncate rounded-5" type="text" id="search-item" onkeyup="search()" style="border: none;" placeholder="What are you looking for?" aria-label="Search" required>
+            <button class="btn" type="button" name="done"><i class="fa fa-search"></i></button>
           </form>
         
           <span class="nav-item d-lg-none d-md-none d-flex mx-2" style="margin-left: 30px;">            
@@ -55,13 +55,13 @@
           </span>
          
           <!--DROPDOWN SEARCHBAR  -->
-        <div id="myNav" class="overlay w-100 d-lg-none d-md-none d-flex border-2">
-        <form class="input-group shadow-sm rounded-5 border-0 m-2" role="search" action="store.html" method="GET" style="background: var(--secondary-color);">
-        <input class="form-control rounded-5 border-0" type="search" name="search" autocomplete="on" placeholder="What are you looking for?" aria-label="Search" required>
-        <button class="btn" type="submit" name="done"><i class="fa fa-search" style="color:  var(--primary-color);"></i></button>
-        </form>
-        </div>
-        <!-- DROPDOWN SEARCHBAR  -->
+          <div id="myNav" class="overlay w-100 d-lg-none d-md-none d-flex border-2">
+            <form class="input-group shadow-sm rounded-5 border-0 m-2" role="search" style="background: var(--secondary-color);">
+            <input class="form-control rounded-5 border-0" type="text" id="searchit" onkeyup="searchitem()" placeholder="What are you looking for?" aria-label="Search" required>
+            <button class="btn" type="button" name="done"><i class="fa fa-search" style="color:var(--primary-color);"></i></button>
+            </form>
+            </div>
+            <!-- DROPDOWN SEARCHBAR  -->
         </div>
         </nav>
         <!-- NAVBAR -->
@@ -119,10 +119,10 @@
 <!-- PRODUCT -->
 <div class="container-fluid pb-5">
   <div class="container">
-  <div class="row"> 
+  <div class="row" id="product-list"> 
 
     <!--  -->
-  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
   <div class="card border-0 rounded-0 shadow mt-2 wow">
     <div id="cart_count" class="position-absolute translate-middle badge py-2" style="right:-30px; top:25px; background: rgb(251, 253, 253);border:solid 1px #fec267; color:#fec267; border-radius:2px 2px 2px 2px; font-size:12px; opacity: 1;">5% Off</div>
     <ul class="action">
@@ -147,7 +147,7 @@
   </div>
 <!--  -->
  <!--  -->
-<div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+<div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
   <div class="card border-0 rounded-0 shadow mt-2 wow">
     <div id="cart_count" class="position-absolute translate-middle badge py-2" style="right:-30px; top:25px; background: rgb(251, 253, 253);border:solid 1px #fec267; color:#fec267; border-radius:2px 2px 2px 2px; font-size:12px;">5% Off</div>
     <img src="images/product_img/hrltm3i2.png" alt="">
@@ -172,7 +172,7 @@
   </div>
 <!--  -->
  <!--  -->
-<div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+<div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
   <div class="card border-0 rounded-0 shadow mt-2 wow">
     <img src="images/product_img/f5yixdne.png" alt="">
     <ul class="action">
@@ -196,7 +196,7 @@
   </div>
 <!--  -->
  <!--  -->
-<div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+<div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
   <div class="card border-0 rounded-0 shadow mt-2 wow">
     <img src="images/product_img/9hxc68bh.png" alt="">
     <ul class="action">
@@ -220,7 +220,7 @@
   </div>
 <!--  -->
  <!--  -->
-<div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+<div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
   <div class="card border-0 rounded-0 shadow mt-2 wow">
     <div id="cart_count" class="position-absolute translate-middle badge py-2" style="right:-30px; top:25px; background: rgb(251, 253, 253);border:solid 1px #fec267; color:#fec267; border-radius:2px 2px 2px 2px; font-size:12px;">5% Off</div>
     <img src="images/product_img/m57jushf.png" alt="">
@@ -246,7 +246,7 @@
   </div>
 <!--  -->
  <!--  -->
-<div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+<div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
   <div class="card border-0 rounded-0 shadow mt-2 wow">
     <div id="cart_count" class="position-absolute translate-middle badge py-2" style="right:-30px; top:25px; background: rgb(251, 253, 253);border:solid 1px #fec267; color:#fec267; border-radius:2px 2px 2px 2px; font-size:12px;">5% Off</div>
     <img src="images/product_img/tht9bynl.png" alt="">
@@ -272,7 +272,7 @@
   </div>
 <!--  -->
   <!--  -->
-<div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+<div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
   <div class="card border-0 rounded-0 shadow mt-2 wow">
     <img src="images/product_img/bta3708t.png" alt="">
     <ul class="action">
@@ -296,7 +296,7 @@
   </div>
 <!--  -->
 <!--  -->
-<div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+<div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
   <div class="card border-0 rounded-0 shadow mt-2 wow">
     <div id="cart_count" class="position-absolute translate-middle badge py-2" style="right:-30px; top:25px; background: rgb(251, 253, 253);border:solid 1px #fec267; color:#fec267; border-radius:2px 2px 2px 2px; font-size:12px;">5% Off</div>
     <img src="images/product_img/7lug4rkf.png" alt="">
@@ -322,7 +322,7 @@
   </div>
 <!--  -->
 <!--  -->
-<div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+<div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
   <div class="card border-0 rounded-0 shadow mt-2 wow">
     <div id="cart_count" class="position-absolute translate-middle badge py-2" style="right:-30px; top:25px; background: rgb(251, 253, 253);border:solid 1px #fec267; color:#fec267; border-radius:2px 2px 2px 2px; font-size:12px;">5% Off</div>
     <img src="images/product_img/bm8vnvxq.png" alt="">
@@ -348,7 +348,7 @@
   </div>
 <!--  -->
  <!--  -->
-<div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+<div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
   <div class="card border-0 rounded-0 shadow mt-2 wow">
     <div id="cart_count" class="position-absolute translate-middle badge py-2" style="right:-30px; top:25px; background: rgb(251, 253, 253);border:solid 1px #fec267; color:#fec267; border-radius:2px 2px 2px 2px; font-size:12px;">5% Off</div>
     <img src="images/product_img/1a4nh9wv.png" alt="">
@@ -374,7 +374,7 @@
   </div>
 <!--  -->
  <!--  -->
-<div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+<div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
   <div class="card border-0 rounded-0 shadow mt-2 wow">
     <div id="cart_count" class="position-absolute translate-middle badge py-2" style="right:-30px; top:25px; background: rgb(251, 253, 253);border:solid 1px #fec267; color:#fec267; border-radius:2px 2px 2px 2px; font-size:12px;">5% Off</div>
     <img src="images/product_img/4ubxfaqe.png" alt="">
@@ -400,7 +400,7 @@
   </div>
 <!--  -->
  <!--  -->
-<div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+<div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
   <div class="card border-0 rounded-0 shadow mt-2 wow">
     <div id="cart_count" class="position-absolute translate-middle badge py-2" style="right:-30px; top:25px; background: rgb(251, 253, 253);border:solid 1px #fec267; color:#fec267; border-radius:2px 2px 2px 2px; font-size:12px;">5% Off</div>
     <img src="images/product_img/agw754vn.png" alt="">
@@ -430,9 +430,9 @@
 </div>
 <!-- PRODUCT -->
 <!-- SLIDER -->
-<div class="container-fluid my-5 px-0 d-flex align-items-center" style="overflow-x: scroll;max-width: 100%;">
+<div class="container-fluid my-5 px-0 d-flex align-items-center" id="List" style="overflow-x: scroll;max-width: 100%;">
    <!--  -->
-  <div class="card big shadow-sm text-decoration-none rounded-0 border-0" style="background-image:Url('images/product_img/r80u3ahc.png');">
+  <div class="card big shadow-sm text-decoration-none rounded-0 border-0 product" style="background-image:Url('images/product_img/r80u3ahc.png');">
   <div class="p-2 px-3 w-100 text-light">
   <div class="paragraph px-5 py-1 rounded-3">Jordan</div>
   <h4 class="mt-2">PSG X Jordan 24/25 Kit</h4>
@@ -440,7 +440,7 @@
   </div></div>
  <!--  -->
    <!--  -->
-  <div class="card big shadow-sm text-decoration-none rounded-0 border-0" style="background-image:Url('images/product_img/4p0z2w3k.png');">
+  <div class="card big shadow-sm text-decoration-none rounded-0 border-0 product" style="background-image:Url('images/product_img/4p0z2w3k.png');">
   <div class="p-2 px-3 w-100 text-light">
   <div class="paragraph px-5 py-1 rounded-3">Adidas</div>
   <h4 class="mt-2">Adidas X Ghosted</h4>
@@ -448,7 +448,7 @@
   </div></div>
  <!--  -->
    <!--  -->
-  <div class="card big shadow-sm text-decoration-none rounded-0 border-0" style="background-image:Url('images/product_img/i0tq87hu.png');">
+  <div class="card big shadow-sm text-decoration-none rounded-0 border-0 product" style="background-image:Url('images/product_img/i0tq87hu.png');">
   <div class="p-2 px-3 w-100 text-light">
   <div class="paragraph px-5 py-1 rounded-3">Madrid</div>
   <h4 class="mt-2">Real Madrid X Adidas 'LFSTLR' Collection</h4>
@@ -456,7 +456,7 @@
   </div></div>
  <!--  -->
    <!--  -->
-  <div class="card big shadow-sm text-decoration-none rounded-0 border-0" style="background-image:Url('images/product_img/1xt1gmps.png');">
+  <div class="card big shadow-sm text-decoration-none rounded-0 border-0 product" style="background-image:Url('images/product_img/1xt1gmps.png');">
   <div class="p-2 px-3 w-100 text-light">
   <div class="paragraph px-5 py-1 rounded-3">Chelsea</div>
   <h4 class="mt-2">Chelsea FC 24/25 Home Kit</h4>
@@ -464,7 +464,7 @@
   </div></div>
  <!--  -->
    <!--  -->
-  <div class="card big shadow-sm text-decoration-none rounded-0 border-0" style="background-image:Url('images/product_img/wyrhhaw8.png');">
+  <div class="card big shadow-sm text-decoration-none rounded-0 border-0 product" style="background-image:Url('images/product_img/tzoh1l07.png');">
   <div class="p-2 px-3 w-100 text-light">
   <div class="paragraph px-5 py-1 rounded-3">Arsenal</div>
   <h4 class="mt-2">Arsenal FC 24/25 Home Kit</h4>
@@ -472,7 +472,7 @@
   </div></div>
  <!--  -->
    <!--  -->
-  <div class="card big shadow-sm text-decoration-none rounded-0 border-0" style="background-image:Url('images/product_img/mda6zb27.png');">
+  <div class="card big shadow-sm text-decoration-none rounded-0 border-0 product" style="background-image:Url('images/product_img/mda6zb27.png');">
   <div class="p-2 px-3 w-100 text-light">
   <div class="paragraph px-5 py-1 rounded-3">Adidas</div>
   <h4 class="mt-2">Euro 2024 Matchball</h4>
@@ -480,7 +480,7 @@
   </div></div>
  <!--  -->
    <!--  -->
-  <div class="card big shadow-sm text-decoration-none rounded-0 border-0" style="background-image:Url('images/product_img/0fnevvhk.png');">
+  <div class="card big shadow-sm text-decoration-none rounded-0 border-0 product" style="background-image:Url('images/product_img/0fnevvhk.png');">
   <div class="p-2 px-3 w-100 text-light">
   <div class="paragraph px-5 py-1 rounded-3">Barca</div>
   <h4 class="mt-2">Barcelona 24/25 Away Kit</h4>
@@ -488,7 +488,7 @@
   </div></div>
  <!--  -->
    <!--  -->
-  <div class="card big shadow-sm text-decoration-none rounded-0 border-0" style="background-image:Url('images/product_img/3nk6c2tn.png');">
+  <div class="card big shadow-sm text-decoration-none rounded-0 border-0 product" style="background-image:Url('images/product_img/3nk6c2tn.png');">
   <div class="p-2 px-3 w-100 text-light">
   <div class="paragraph px-5 py-1 rounded-3">Adidas</div>
   <h4 class="mt-2">Colombia 100 Years Anniversey kit</h4>
@@ -496,7 +496,7 @@
   </div></div>
  <!--  -->
    <!--  -->
-  <div class="card big shadow-sm text-decoration-none rounded-0 border-0" style="background-image:Url('images/product_img/4ij46nan.png');">
+  <div class="card big shadow-sm text-decoration-none rounded-0 border-0 product" style="background-image:Url('images/product_img/4ij46nan.png');">
   <div class="p-2 px-3 w-100 text-light">
   <div class="paragraph px-5 py-1 rounded-3">ManU</div>
   <h4 class="mt-2">Adidas X Manchester United Adicolor Capsule</h4>
@@ -504,7 +504,7 @@
   </div></div>
  <!--  -->
    <!--  -->
-  <div class="card big shadow-sm text-decoration-none rounded-0 border-0" style="background-image:Url('images/product_img/2zutbcrx.png');">
+  <div class="card big shadow-sm text-decoration-none rounded-0 border-0 product" style="background-image:Url('images/product_img/2zutbcrx.png');">
   <div class="p-2 px-3 w-100 text-light">
   <div class="paragraph px-5 py-1 rounded-3">Nike</div>
   <h4 class="mt-2">EPL 22/23 Matchball</h4>
@@ -520,16 +520,16 @@
 <!-- PRODUCT -->
 <div class="container-fluid pb-5">
   <div class="container">
-  <div class="row"> 
+  <div class="row" id="productlist"> 
 <!--  -->
-  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
 <div class="card border-0" style="overflow: hidden; height: 300px;">
   <img src="images/product_img/607o65hp.png" alt="" style="width: 100%; height: 100%;
   object-fit: cover;
    display: block; transition: transform 0.5s;">
   <div class="bend" style="width: 100%; background: linear-gradient(transparent, #1c1c1c); position: absolute; left: 0; bottom: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 0 40px; text-align: center; transition: height 0.5s; color: #fff;">
     <h5>Nike 23/24 EPL Matchball</h5>
-    <h5 class="fw-bolder">&#8358; 4500</h5>
+    <h5 class="fw-bolder">&#8358; 4600</h5>
     <div class="rating">
   <i class="fa fa-star" aria-hidden="true"></i>
   <i class="fa fa-star" aria-hidden="true"></i>
@@ -542,7 +542,7 @@
  </div>
   </div>
 <!--  -->
-  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
 <div class="card border-0" style="overflow: hidden; height: 300px;">
   <img src="images/product_img/hbeb1ffb.png" alt="" style="width: 100%; height: 100%;
   object-fit: cover;
@@ -562,7 +562,7 @@
  </div>
   </div>
 <!--  -->
-  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
 <div class="card border-0" style="overflow: hidden; height: 300px;">
   <img src="images/product_img/g9vxpe6k.png" alt="" style="width: 100%; height: 100%;
   object-fit: cover;
@@ -582,7 +582,7 @@
  </div>
   </div>
 <!--  -->
-  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
 <div class="card border-0" style="overflow: hidden; height: 300px;">
   <img src="images/product_img/e9u17xbf.png" alt="" style="width: 100%; height: 100%;
   object-fit: cover;
@@ -602,7 +602,7 @@
  </div>
   </div>
 <!--  -->
-  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
 <div class="card border-0" style="overflow: hidden; height: 300px;">
   <img src="images/product_img/bfvsdwlx.png" alt="" style="width: 100%; height: 100%;
   object-fit: cover;
@@ -622,7 +622,7 @@
  </div>
   </div>
 <!--  -->
-  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
 <div class="card border-0" style="overflow: hidden; height: 300px;">
   <img src="images/product_img/u1t9oaqg.png" alt="" style="width: 100%; height: 100%;
   object-fit: cover;
@@ -642,7 +642,7 @@
  </div>
   </div>
 <!--  -->
-  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
 <div class="card border-0" style="overflow: hidden; height: 300px;">
   <img src="images/product_img/j92wvd1f.png" alt="" style="width: 100%;height: 100%;
   object-fit: cover;
@@ -662,7 +662,7 @@
  </div>
   </div>
 <!--  -->
-  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
 <div class="card border-0" style="overflow: hidden; height: 300px;">
   <img src="images/product_img/wdaffc9j.png" alt="" style="width: 100%; height: 100%;
   object-fit: cover;
@@ -682,7 +682,7 @@
  </div>
   </div>
 <!--  -->
-  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
 <div class="card border-0" style="overflow: hidden; height: 300px;">
   <img src="images/product_img/nbbfesyp.png" alt="" style="width: 100%; height: 100%;
   object-fit: cover;
@@ -702,7 +702,7 @@
  </div>
   </div>
 <!--  -->
-  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
 <div class="card border-0" style="overflow: hidden; height: 300px;">
   <img src="images/product_img/ie5ddtuk.png" alt="" style="width: 100%; height: 100%;
   object-fit: cover;
@@ -722,7 +722,7 @@
  </div>
   </div>
 <!--  -->
-  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
 <div class="card border-0" style="overflow: hidden; height: 300px;">
   <img src="images/product_img/5ed3q5lg.png" alt="" style="width: 100%; height: 100%;
   object-fit: cover;
@@ -742,7 +742,7 @@
  </div>
   </div>
 <!--  -->
-  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
 <div class="card border-0" style="overflow: hidden; height: 300px;">
   <img src="images/product_img/mog56eup.png" alt="" style="width: 100%; height: 100%;
   object-fit: cover;
@@ -762,7 +762,7 @@
  </div>
   </div>
 <!--  -->
-  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
 <div class="card border-0" style="overflow: hidden; height: 300px;">
   <img src="images/product_img/6588jpoo.png" alt="" style="width: 100%; height: 100%;
   object-fit: cover;
@@ -782,9 +782,9 @@
  </div>
   </div>
 <!--  -->
-  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
 <div class="card border-0" style="overflow: hidden; height: 300px;">
-  <img src="images/product_img/423f1nk5.png" alt="" style="width: 100%; height: 100%;
+  <img src="images/product_img/hwappxa9.png" alt="" style="width: 100%; height: 100%;
   object-fit: cover;
    display: block; transition: transform 0.5s;">
   <div class="bend" style="width: 100%; background: linear-gradient(transparent, #1c1c1c); position: absolute; left: 0; bottom: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 0 40px; text-align: center; transition: height 0.5s; color: #fff;">
@@ -802,9 +802,9 @@
  </div>
   </div>
 <!--  -->
-  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
 <div class="card border-0" style="overflow: hidden; height: 300px;">
-  <img src="images/product_img/58jbz4r1.png" alt="" style="width: 100%; height: 100%;
+  <img src="images/product_img/pnrc65bq.png" alt="" style="width: 100%; height: 100%;
   object-fit: cover;
    display: block; transition: transform 0.5s;">
   <div class="bend" style="width: 100%; background: linear-gradient(transparent, #1c1c1c); position: absolute; left: 0; bottom: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 0 40px; text-align: center; transition: height 0.5s; color: #fff;">
@@ -822,7 +822,7 @@
  </div>
   </div>
 <!--  -->
-  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
 <div class="card border-0" style="overflow: hidden; height: 300px;">
   <img src="images/product_img/u8f8fwy4.png" alt="" style="width: 100%; height: 100%;
   object-fit: cover;
@@ -842,7 +842,7 @@
  </div>
   </div>
 <!--  -->
-  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
 <div class="card border-0" style="overflow: hidden; height: 300px;">
   <img src="images/product_img/9fz9rxb4.png" alt="" style="width: 100%; height: 100%;
   object-fit: cover;
@@ -862,7 +862,7 @@
  </div>
   </div>
 <!--  -->
-  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
 <div class="card border-0" style="overflow: hidden; height: 300px;">
   <img src="images/product_img/hi9mogvc.png" alt="" style="width: 100%; height: 100%;
   object-fit: cover;
@@ -882,7 +882,7 @@
  </div>
   </div>
 <!--  -->
-  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
 <div class="card border-0" style="overflow: hidden; height: 300px;">
   <img src="images/product_img/zh5gireg.png" alt="" style="width: 100%; height: 100%;
   object-fit: cover;
@@ -902,7 +902,7 @@
  </div>
   </div>
 <!--  -->
-  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
 <div class="card border-0" style="overflow: hidden; height: 300px;">
   <img src="images/product_img/4z3c9btm.png" alt="" style="width: 100%; height: 100%;
   object-fit: cover;
@@ -922,7 +922,7 @@
  </div>
   </div>
 <!--  -->
-  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
 <div class="card border-0" style="overflow: hidden; height: 300px;">
   <img src="images/product_img/r1slw6vy.png" alt="" style="width: 100%; height: 100%;
   object-fit: cover;
@@ -942,7 +942,7 @@
  </div>
   </div>
 <!--  -->
-  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
 <div class="card border-0" style="overflow: hidden; height: 300px;">
   <img src="images/product_img/ewd7x7sf.png" alt="" style="width: 100%; height: 100%;
   object-fit: cover;
@@ -962,7 +962,7 @@
  </div>
   </div>
 <!--  -->
-  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
 <div class="card border-0" style="overflow: hidden; height: 300px;">
   <img src="images/product_img/2x0ns3v9.png" alt="" style="width: 100%; height: 100%;
   object-fit: cover;
@@ -982,13 +982,173 @@
  </div>
   </div>
 <!--  -->
-  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0">
+  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
 <div class="card border-0" style="overflow: hidden; height: 300px;">
   <img src="images/product_img/wjz06e85.png" alt="" style="width: 100%; height: 100%;
   object-fit: cover;
    display: block; transition: transform 0.5s;">
   <div class="bend" style="width: 100%; background: linear-gradient(transparent, #1c1c1c); position: absolute; left: 0; bottom: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 0 40px; text-align: center; transition: height 0.5s; color: #fff;">
     <h5>Tottenham Hotspur 24/25 Third kit</h5>
+    <h5 class="fw-bolder">&#8358; 4500</h5>
+    <div class="rating">
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star text-secondary" aria-hidden="true"></i>
+  </div>
+  <a href="">Buy Now <div class="fa fa-shopping-bag"></div></a>
+  </div>
+ </div>
+  </div>
+  <!--  -->
+  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
+<div class="card border-0" style="overflow: hidden; height: 300px;">
+  <img src="images/product_img/4n9ok6dl.png" alt="" style="width: 100%; height: 100%;
+  object-fit: cover;
+   display: block; transition: transform 0.5s;">
+  <div class="bend" style="width: 100%; background: linear-gradient(transparent, #1c1c1c); position: absolute; left: 0; bottom: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 0 40px; text-align: center; transition: height 0.5s; color: #fff;">
+    <h5>Arsenal FC 24/25 Away kit</h5>
+    <h5 class="fw-bolder">&#8358; 4500</h5>
+    <div class="rating">
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star text-secondary" aria-hidden="true"></i>
+  </div>
+  <a href="">Buy Now <div class="fa fa-shopping-bag"></div></a>
+  </div>
+ </div>
+  </div>
+  <!--  -->
+  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
+<div class="card border-0" style="overflow: hidden; height: 300px;">
+  <img src="images/product_img/d85g9odi.png" alt="" style="width: 100%; height: 100%;
+  object-fit: cover;
+   display: block; transition: transform 0.5s;">
+  <div class="bend" style="width: 100%; background: linear-gradient(transparent, #1c1c1c); position: absolute; left: 0; bottom: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 0 40px; text-align: center; transition: height 0.5s; color: #fff;">
+    <h5>Juventus FC 24/25 Away kit</h5>
+    <h5 class="fw-bolder">&#8358; 4500</h5>
+    <div class="rating">
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star text-secondary" aria-hidden="true"></i>
+  </div>
+  <a href="">Buy Now <div class="fa fa-shopping-bag"></div></a>
+  </div>
+ </div>
+  </div>
+  <!--  -->
+  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
+<div class="card border-0" style="overflow: hidden; height: 300px;">
+  <img src="images/product_img/prcpf5ov.png" alt="" style="width: 100%; height: 100%;
+  object-fit: cover;
+   display: block; transition: transform 0.5s;">
+  <div class="bend" style="width: 100%; background: linear-gradient(transparent, #1c1c1c); position: absolute; left: 0; bottom: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 0 40px; text-align: center; transition: height 0.5s; color: #fff;">
+    <h5>Manchester United 24/25 Home kit</h5>
+    <h5 class="fw-bolder">&#8358; 4500</h5>
+    <div class="rating">
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star text-secondary" aria-hidden="true"></i>
+  </div>
+  <a href="">Buy Now <div class="fa fa-shopping-bag"></div></a>
+  </div>
+ </div>
+  </div>
+  <!--  -->
+  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
+<div class="card border-0" style="overflow: hidden; height: 300px;">
+  <img src="images/product_img/fzw9k2v1.png" alt="" style="width: 100%; height: 100%;
+  object-fit: cover;
+   display: block; transition: transform 0.5s;">
+  <div class="bend" style="width: 100%; background: linear-gradient(transparent, #1c1c1c); position: absolute; left: 0; bottom: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 0 40px; text-align: center; transition: height 0.5s; color: #fff;">
+    <h5>MLS Club</h5>
+    <h5 class="fw-bolder">&#8358; 4500</h5>
+    <div class="rating">
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star text-secondary" aria-hidden="true"></i>
+  </div>
+  <a href="">Buy Now <div class="fa fa-shopping-bag"></div></a>
+  </div>
+ </div>
+  </div>
+  <!--  -->
+  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
+<div class="card border-0" style="overflow: hidden; height: 300px;">
+  <img src="images/product_img/8lc8z6og.png" alt="" style="width: 100%; height: 100%;
+  object-fit: cover;
+   display: block; transition: transform 0.5s;">
+  <div class="bend" style="width: 100%; background: linear-gradient(transparent, #1c1c1c); position: absolute; left: 0; bottom: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 0 40px; text-align: center; transition: height 0.5s; color: #fff;">
+    <h5>Adidas X</h5>
+    <h5 class="fw-bolder">&#8358; 4500</h5>
+    <div class="rating">
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star text-secondary" aria-hidden="true"></i>
+  </div>
+  <a href="">Buy Now <div class="fa fa-shopping-bag"></div></a>
+  </div>
+ </div>
+  </div>
+  <!--  -->
+  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
+<div class="card border-0" style="overflow: hidden; height: 300px;">
+  <img src="images/product_img/rnb34qu2.png" alt="" style="width: 100%; height: 100%;
+  object-fit: cover;
+   display: block; transition: transform 0.5s;">
+  <div class="bend" style="width: 100%; background: linear-gradient(transparent, #1c1c1c); position: absolute; left: 0; bottom: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 0 40px; text-align: center; transition: height 0.5s; color: #fff;">
+    <h5>Manchester United Third Kit</h5>
+    <h5 class="fw-bolder">&#8358; 4500</h5>
+    <div class="rating">
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star text-secondary" aria-hidden="true"></i>
+  </div>
+  <a href="">Buy Now <div class="fa fa-shopping-bag"></div></a>
+  </div>
+ </div>
+  </div>
+  <!--  -->
+  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
+<div class="card border-0" style="overflow: hidden; height: 300px;">
+  <img src="images/product_img/5f4rvu88.png" alt="" style="width: 100%; height: 100%;
+  object-fit: cover;
+   display: block; transition: transform 0.5s;">
+  <div class="bend" style="width: 100%; background: linear-gradient(transparent, #1c1c1c); position: absolute; left: 0; bottom: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 0 40px; text-align: center; transition: height 0.5s; color: #fff;">
+    <h5>Arsenal X Aries</h5>
+    <h5 class="fw-bolder">&#8358; 4500</h5>
+    <div class="rating">
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star text-secondary" aria-hidden="true"></i>
+  </div>
+  <a href="">Buy Now <div class="fa fa-shopping-bag"></div></a>
+  </div>
+ </div>
+  </div>
+  <!--  -->
+  <div class="col-md-3 col-sm-6 my-3 my-lg-3 my-md-0 product">
+<div class="card border-0" style="overflow: hidden; height: 300px;">
+  <img src="images/product_img/ggvixwtb.png" alt="" style="width: 100%; height: 100%;
+  object-fit: cover;
+   display: block; transition: transform 0.5s;">
+  <div class="bend" style="width: 100%; background: linear-gradient(transparent, #1c1c1c); position: absolute; left: 0; bottom: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 0 40px; text-align: center; transition: height 0.5s; color: #fff;">
+    <h5>Adidas Predator Glove</h5>
     <h5 class="fw-bolder">&#8358; 4500</h5>
     <div class="rating">
   <i class="fa fa-star" aria-hidden="true"></i>
@@ -1072,7 +1232,7 @@
   
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>  
     <!-- <script src="https://unpkg.com/scrollreveal"></script> -->
-    <script src="style.js"></script>
+    <script src="store.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
       <script src="https://use.fontawesome.com/61e146bea4.js"></script>
   
